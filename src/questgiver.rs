@@ -17,7 +17,7 @@ impl QuestGiver {
 
     pub fn interact() {
         QuestGiver::new(
-            "Eldrin the Elf:\n".to_string(),
+            "\nEldrin the Elf:\n".to_string(),
             "Greetings, adventurer! I have a quest that I believe you are well suited for."
                 .to_string(),
             "Retrieve the lost artifact from the cave.\n".to_string(),

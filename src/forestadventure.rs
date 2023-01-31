@@ -1,4 +1,5 @@
 use crate::forestmap::ForestMap;
+use crate::merchant::Merchant;
 use crate::questgiver::QuestGiver;
 use std::io;
 use std::sync::Once;
@@ -28,7 +29,19 @@ impl ForestAdventure {
             match input.as_ref() {
                 "explore" => ForestMap::explore(&ForestMap::new()),
                 "rest" => println!("You rest for a while."),
-                "interact" => QuestGiver::interact(),    
+                "interact" => {
+                    println!("Which NPC would you like to interact with? (questgiver, merchant)\n");
+                    let mut npc_input = String::new();
+                    io::stdin().read_line(&mut npc_input).unwrap();
+                    let npc_input = npc_input.trim().to_string();
+                    if npc_input == "questgiver" {
+                        QuestGiver::interact();
+                    } else if npc_input == "merchant" {
+                        Merchant::interact();
+                    } else {
+                        println!("Invalid command. Please try again.");
+                    }
+                }
                 "quit" => {
                     println!("Thanks for playing!");
                     break;
