@@ -1,5 +1,5 @@
 use std::io;
-// use crate::forestadventure::ForestAdventure;
+use crate::forestadventure::ForestAdventure;
 
 pub struct ForestMap {
     locations: Vec<String>,
@@ -26,9 +26,11 @@ impl ForestMap {
         io::stdin().read_line(&mut input).unwrap();
         let input = input.trim();
         if input == "left" {
-            println!("\nYou take the left path and come across a beautiful lake.\n");
+            println!("You take the left path and come across a beautiful lake.\n");
+            ForestAdventure::start(&ForestAdventure::new("Forest".to_string()));
         } else if input == "right" {
-            println!("\nYou decide to take the right path and end up at a dark and mysterious cave.\n");
+            println!("You decide to take the right path and end up at a dark and mysterious cave.\n");
+            ForestAdventure::start(&ForestAdventure::new("Forest".to_string()));
         } else {
             println!("Invalid command. Please try again.");
         }
