@@ -16,7 +16,7 @@ impl QuestGiver {
     }
 
     pub fn interact() {
-        let _ = QuestGiver::new(
+        QuestGiver::new(
             "Eldrin the Elf:\n".to_string(),
             "Greetings, adventurer! I have a quest that I believe you are well suited for."
                 .to_string(),
