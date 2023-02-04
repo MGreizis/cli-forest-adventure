@@ -27,7 +27,7 @@ impl ForestAdventure {
             let input = input.trim().to_string();
             println!("");
             match input.as_ref() {
-                "explore" => ForestMap::explore(&ForestMap::new()),
+                "explore" => ForestMap::explore(&mut ForestMap::new()),
                 "rest" => println!("You rest for a while."),
                 "interact" => {
                     println!("Which NPC would you like to interact with? (questgiver, merchant)\n");
